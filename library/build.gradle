@@ -1,11 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.1"
 
     defaultConfig {
-        applicationId "info.metadude.android.schedule.parser.demo"
+        applicationId "info.metadude.android.library.schedule.parser"
         minSdkVersion 8
         targetSdkVersion 21
         versionCode 1
@@ -22,13 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    packagingOptions {
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/NOTICE'
-    }
 }
 
 dependencies {
-    compile project(":library")
-    compile 'com.android.support:appcompat-v7:21.0.2'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.4.2'
+    compile 'javax.annotation:jsr250-api:1.0'
+    compile 'com.squareup.retrofit:retrofit:1.8.0'
 }
